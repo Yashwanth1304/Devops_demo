@@ -8,8 +8,9 @@ pipeline {
         }
         stage('Update Jira') {
             steps {
-                jiraComment body: "Build completed for commit ${env.GIT_COMMIT}"
+                jiraComment issueKey: 'PROJ-123', body: "Build completed for commit ${env.GIT_COMMIT}"
             }
         }
     }
 }
+
